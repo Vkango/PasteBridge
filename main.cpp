@@ -293,15 +293,15 @@ int main() {
     PeekMessageW(&dummy, nullptr, 0, 0, PM_NOREMOVE);
 
     std::wcout << L"PasteBridge 快速模式启动" << std::endl;
-    std::wcout << L"Ctrl+Alt+1: 绑定目标窗口 A" << std::endl;
-    std::wcout << L"Ctrl+Alt+2: 绑定源窗口 B" << std::endl;
+    std::wcout << L"Ctrl+Alt+9: 绑定目标窗口 A" << std::endl;
+    std::wcout << L"Ctrl+Alt+0: 绑定源窗口 B" << std::endl;
     std::wcout << L"Ctrl+Alt+V: 手动传输（保留）" << std::endl;
     std::wcout << L"Ctrl+Alt+T: 切换快速模式 [当前: 关]" << std::endl;
     std::wcout << L"提示: 在 A 窗口点击记录位置; 快速模式下在 B 窗口拖拽选中文本即自动粘贴" << std::endl;
     std::wcout << L"----------------------------------------" << std::endl;
 
-    if (!RegisterHotKey(nullptr, HOTKEY_BIND_A, MOD_CONTROL | MOD_ALT, '1') ||
-        !RegisterHotKey(nullptr, HOTKEY_BIND_B, MOD_CONTROL | MOD_ALT, '2') ||
+    if (!RegisterHotKey(nullptr, HOTKEY_BIND_A, MOD_CONTROL | MOD_ALT, '9') ||
+        !RegisterHotKey(nullptr, HOTKEY_BIND_B, MOD_CONTROL | MOD_ALT, '0') ||
         !RegisterHotKey(nullptr, HOTKEY_TRANSFER, MOD_CONTROL | MOD_ALT, 'V') ||
         !RegisterHotKey(nullptr, HOTKEY_TOGGLE_QUICK, MOD_CONTROL | MOD_ALT, 'T')) {
         std::wcout << L"注册全局热键失败. 错误码: " << GetLastError() << std::endl;
